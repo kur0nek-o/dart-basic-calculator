@@ -25,10 +25,10 @@ void main(List<String> arguments) {
     }
 
     stdout.write('Enter first number: ');
-    int firstNumber = int.parse(stdin.readLineSync()!);
+    double firstNumber = double.parse(stdin.readLineSync()!);
 
     stdout.write('Enter second number: ');
-    int secondNumber = int.parse(stdin.readLineSync()!);
+    double secondNumber = double.parse(stdin.readLineSync()!);
 
     print(
         'Result: ${availableOperations[operation.toString()]!(firstNumber, secondNumber)}');

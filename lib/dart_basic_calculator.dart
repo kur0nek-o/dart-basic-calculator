@@ -1,15 +1,15 @@
-int additon(int a, int b) {
+double additon(double a, double b) {
   return a + b;
 }
 
-int subtraction(int a, int b) {
+double subtraction(double a, double b) {
   return a - b;
 }
 
-int multiplication(int a, int b) {
+double multiplication(double a, double b) {
   return a * b;
 }
 
-double division(int a, int b) {
+double division(double a, double b) {
   return a / b;
 }
