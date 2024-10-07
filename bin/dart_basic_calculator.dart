@@ -3,7 +3,12 @@ import 'package:dart_basic_calculator/dart_basic_calculator.dart'
     as dart_basic_calculator;
 
 void main(List<String> arguments) {
-  var availableOperations = [1, 2, 3, 4];
+  var availableOperations = {
+    '1': dart_basic_calculator.additon,
+    '2': dart_basic_calculator.subtraction,
+    '3': dart_basic_calculator.multiplication,
+    '4': dart_basic_calculator.division,
+  };
 
   print('Available operations: ');
   print('1. Addition');
@@ -15,14 +20,21 @@ void main(List<String> arguments) {
     stdout.write('Please select number of operation you want to perform: ');
     int operation = int.parse(stdin.readLineSync()!);
 
-    if (!availableOperations.contains(operation)) {
+    if (!availableOperations.containsKey(operation.toString())) {
       throw Exception('Invalid operation selected.');
     }
 
-    print('selected operation: $operation');
+    stdout.write('Enter first number: ');
+    int firstNumber = int.parse(stdin.readLineSync()!);
+
+    stdout.write('Enter second number: ');
+    int secondNumber = int.parse(stdin.readLineSync()!);
+
+    print(
+        'Result: ${availableOperations[operation.toString()]!(firstNumber, secondNumber)}');
   } on FormatException {
     print('Invalid input. Please enter a number.');
   } catch (e) {
-    print('An error occurred: $e');
+    print(e);
   }
 }
